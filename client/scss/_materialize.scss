@@ -1,0 +1,16 @@
+input[type=text] {
+  border-color: #8f8f8f;
+
+  &:focus:not([readonly]) {
+    border-bottom: 1px solid #7b1fa2;
+    box-shadow: 0 1px 0 0 #7b1fa2;
+
+    & + label {
+      color: #7b1fa2;
+    }
+  }
+
+  & + label {
+    color: #515151;
+  }
+}

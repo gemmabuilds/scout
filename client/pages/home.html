@@ -1,0 +1,65 @@
+<template name="home">
+  <div class="container home-container">
+    <h1>Scout</h1>
+    <h2>
+      <span class="He">&hearts;</span>
+      <span class="Cl">&clubs;</span>
+      <span class="Di">&diams;</span>
+      <span class="Sp">&spades;</span>
+      <span class="St">&#x2605;</span>
+    </h2>
+
+    {{> yield "form"}}
+
+  </div>
+</template>
+
+<template name="join-game">
+  <div class="row">
+    <form class="col s12" id="join-game">
+      <div class="row">
+        <div class="input-field col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+          <input type="text" id="gameCode" class="validate">
+          <label for="gameCode">Game Code</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light purple darken-2" type="submit">
+        Join
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <p>
+        Looking to create your own game?
+        <a href="/new" class="purple-text text-darken-2">Create a Game</a>
+      </p>
+    </div>
+  </div>
+</template>
+
+<template name="new-game">
+  <div class="row">
+    <form class="col s12" id="create-game">
+      <div class="row">
+        <div class="input-field col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+          <input type="text" id="gameName" class="validate">
+          <label for="gameName">Game Title</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light purple darken-2" type="submit">
+        Create Game
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <p>
+        Looking to join an existing game?
+        <a href="/" class="purple-text text-darken-2">Join a Game</a>
+      </p>
+    </div>
+  </div>
+</template>

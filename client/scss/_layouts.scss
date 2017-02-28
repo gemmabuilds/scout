@@ -1,0 +1,32 @@
+.main-layout,
+.game-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  main {
+    flex: 1 0 auto;
+  }
+  .container {
+    text-align: center;
+  }
+
+  label {
+    text-align: left;
+  }
+}
+
+.game-layout {
+  footer.page-footer {
+    padding-top: 5px;
+
+    .container .row {
+      margin-bottom: 5px;
+    }
+
+    .footer-copyright {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+}

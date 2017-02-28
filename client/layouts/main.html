@@ -1,0 +1,28 @@
+<template name="main-layout">
+  <div class="main-layout purple lighten-4">
+    <header></header>
+    <main>
+      {{> yield}}
+    </main>
+    <footer class="page-footer purple">
+      <div class="container">
+        <div class="row">
+          <div class="col s4">
+            <a href="#" class="white-text"><div class="section">Contact</div></a>
+          </div>
+          <div class="col s4">
+            <a href="#" class="white-text"><h5>Rules</h5></a>
+          </div>
+          <div class="col s4">
+            <a href="#" class="white-text"><div class="section">About</div></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2016 Copyright
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
