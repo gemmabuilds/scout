@@ -38,5 +38,7 @@ Template.home.events({
       short_id: shortId,
       name: gameName,
     });
+
+    Router.go('/game/' + shortId);
   },
 });

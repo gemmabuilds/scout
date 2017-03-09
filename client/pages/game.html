@@ -1,9 +1,12 @@
 <template name="game">
   <div class="container">
-    <h1>Join Game</h1>
+    <h1>Join {{game.name}}</h1>
   </div>
 </template>
 
-<template name="game-table">
-  this is the game table
+<template name="gameTable">
+  <div class="container">
+    <h1>{{game.name}}</h1>
+    <h2>Game Code: {{game.short_id}}</h2>
+  </div>
 </template>
