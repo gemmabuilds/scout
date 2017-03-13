@@ -1,6 +1,31 @@
 <template name="game">
   <div class="container">
-    <h1>Join {{game.name}}</h1>
+    <h1>Join "{{game.name}}"</h1>
+
+    <div class="row">
+      <form class="col s12" id="join-game">
+        <div class="row">
+          <div class="input-field col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+            <input type="text" id="playerName" class="validate">
+            <label for="playerName">Your Name</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light purple darken-2" type="submit">
+          Enter Game
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <p>
+          {{#with game}}
+            <a href="{{pathFor route='table'}}" class="purple-text">Click here </a>
+          {{/with}}
+          to display the game table (Display on screen all players can see)
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
