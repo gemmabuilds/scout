@@ -1,6 +1,24 @@
 <template name="game">
   <div class="container">
-    <h1>Join {{game.name}}</h1>
+    {{> yield "content"}}
+  </div>
+</template>
+
+<template name="enterGame">
+  <h1>Join {{game.name}}</h1>
+  <div class="row">
+    <form class="col s12" id="enter-game">
+      <div class="row">
+        <div class="input-field col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+          <input type="text" id="playerName" class="validate">
+          <label for="playerName">Nickname</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light purple darken-2" type="submit">
+        Enter Game
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
   </div>
 </template>
 
