@@ -18,6 +18,14 @@ Template.home.events({
     const target = event.target;
     const gameName = target.gameName.value;
     var shortId;
+    var suits = ['&hearts;', '&clubs;', '&diams;', '&spades;', '&#x2605;'];
+    var deck = [];
+
+    for (var s = 0; s < suits.length; s++) {
+      for (var v = 1; v < 11; v++) {
+        deck.push({ value: v, suit: suits[s] });
+      }
+    }
 
     var hashList = Previous.findOne({ title: 'game-hash' });
 
@@ -37,6 +45,7 @@ Template.home.events({
     Games.insert({
       short_id: shortId,
       name: gameName,
+      deck: deck,
     });
 
     Router.go('/game/' + shortId);

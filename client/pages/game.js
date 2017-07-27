@@ -31,8 +31,23 @@ Template.enterGame.events({
   },
 });
 
+Template.game.events({
+  'submit #join-game'(event) {
+    event.preventDefault();
+
+    const target = event.target;
+    const playerName = target.playerName.value;
+
+    var game = Games.findOne({short_id: Router.current().params.short_id});
+
+    Games.update({ _id: game._id }, {
+      $push: { players: { name: playerName, hand: [] } },
+    });
+  },
+})
+
 Template.gameTable.helpers({
   game: function() {
-    return Games.findOne({short_id: Router.current().params._id});
+    return Games.findOne({short_id: Router.current().params.short_id});
   },
 });

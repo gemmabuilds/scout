@@ -33,6 +33,7 @@ Player = new SimpleSchema({
   },
   hand: {
     type: [Card],
+    label: 'Hand',
   },
 });
 
@@ -50,23 +51,11 @@ Schemas.Game = new SimpleSchema({
     type: [Card],
     label: 'Deck',
     max: 50,
-    autoValue: function () {
-      var suits = ['&hearts;', '&clubs;', '&diams;', '&spades;', '&#x2605;'];
-      var deck = [];
-
-      for (var s = 0; s < suits.length; s++) {
-        for (var v = 1; v < 11; v++) {
-          deck.push({ value: v, suit: suits[s] });
-        }
-      }
-
-      return deck;
-    },
   },
   players: {
     type: [Player],
     label: 'Players',
-    optional: true,
+    defaultValue: [],
   },
 });
 
