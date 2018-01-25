@@ -5,7 +5,9 @@
 </template>
 
 <template name="enterGame">
-  <h1>Join {{game.name}}</h1>
+  {{#with game}}
+  <h1>{{game.name}}</h1>
+  <p>code: {{game.short_id}}</p>
   <div class="row">
     <form class="col s12" id="enter-game">
       <div class="row">
@@ -14,7 +16,7 @@
           <label for="playerName">Nickname</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light purple darken-2" type="submit">
+      <button class="btn waves-effect waves-light" type="submit">
         Enter Game
         <i class="material-icons right">send</i>
       </button>
@@ -23,18 +25,19 @@
   <div class="row">
     <div class="col s12">
       <p>
-        {{#with game}}
-          <a href="{{pathFor route='table'}}" class="purple-text">Click here </a>
-        {{/with}}
+        <a href="{{pathFor route='table'}}">Click here </a>
         to display the game table (Display on screen all players can see)
       </p>
     </div>
   </div>
+  {{/with}}
 </template>
 
 <template name="gameTable">
-  <div class="container">
-    <h1>{{game.name}}</h1>
-    <h2>Game Code: {{game.short_id}}</h2>
-  </div>
+  {{#if game}}
+  <h1>{{game.name}}</h1>
+  <h2>Game Code: {{game.short_id}}</h2>
+  {{else}}
+  <h1>{{> yellow_loader_big}}</h1>
+  {{/if}}
 </template>

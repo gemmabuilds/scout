@@ -1,16 +1,8 @@
-input[type=text] {
-  border-color: #8f8f8f;
+@import '{materialize:materialize}/sass/components/color';
 
-  &:focus:not([readonly]) {
-    border-bottom: 1px solid #7b1fa2;
-    box-shadow: 0 1px 0 0 #7b1fa2;
+$primary-color: color("purple", "base");
+$secondary-color: color("purple", "darken-2");
 
-    & + label {
-      color: #7b1fa2;
-    }
-  }
+$link-color: color("purple", "base");
 
-  & + label {
-    color: #515151;
-  }
-}
+@import '{materialize:materialize}/sass/materialize';
