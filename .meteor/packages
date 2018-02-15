@@ -22,3 +22,5 @@ iron:router
 fourseven:scss
 materialize:materialize
 planettraining:material-design-icons-font
+artwells:accounts-guest
+accounts-ui
